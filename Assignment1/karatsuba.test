@@ -1,0 +1,20 @@
+- karatsuba("2","3");
+val it = [#"6"] : char list
+- karatsuba("a","23");
+
+uncaught exception NotUnsignedIntegers
+  raised at: karatsuba.sml:113.89-113.108
+- karatsuba("234","-123");
+
+uncaught exception NotUnsignedIntegers
+  raised at: karatsuba.sml:113.89-113.108
+- karatsuba("232@ww","4526-");
+
+uncaught exception NotUnsignedIntegers
+  raised at: karatsuba.sml:113.89-113.108
+- karatsuba("6","9");
+val it = [#"5",#"4"] : char list
+- karatsuba("9","9");
+val it = [#"8",#"1"] : char list
+- 
+

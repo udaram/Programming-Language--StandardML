@@ -1,0 +1,47 @@
+
+
+(*test cases for Function fromString
+-fromString("((2|3)*)
+val it = Star (Or (Atom "3",Atom "2")) : string RE
+- fromString("(2).*)");
+
+uncaught exception Empty
+  raised at: smlnj/init/pervasive.sml:209.19-209.24
+- fromString("((2|3).3)");
+val it = Dot (Atom "3",Or (Atom #,Atom #)) : string RE
+- fromString("((2|3)*)");
+val it = Star (Or (Atom "3",Atom "2")) : string RE
+
+*)
+
+(*test cases for Function toString
+-toString(Atom "2");
+val it = "2" : string
+- toString((Dot (Star (Or (Atom "0", Atom "1")), Atom "2")));
+val it = "((0|1)*.2)" : string
+
+*)
+
+(*Test cases for DFA and Accept Function
+test cases
+- accept("12.2");
+val it = SOME FIXED : class
+- accept("5555E14");
+val it = NONE : class
+- accept("0.1E-1");
+val it = SOME FLOAT : class
+- accept("-2525.0");
+val it = SOME FIXED : class
+- accept("-1447.1E+14");
+val it = SOME FLOAT : class
+- accept("-1447.1E+14.3");
+val it = NONE : class
+- accept("=");
+val it = NONE : class
+- accept("++");
+val it = NONE : class
+- accept("-253246672465.2356000110203E+2637647688");
+val it = SOME FLOAT : class
+-accept("-14.25E--14");
+val it = NONE : class
+*)
