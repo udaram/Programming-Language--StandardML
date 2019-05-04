@@ -1,0 +1,103 @@
+Testcases::
+input and output::
+
+1.
+input:-
+    val AND=(lembda(l,lembda(m,ITE(l,m,F))));
+    fl(appl(appl(AND,T),F));
+
+output:-
+    val it = F : ?.X1 const
+
+2.
+input:-
+    val OR=lembda(l,lembda(m,ITE(l,T,m)));
+    fl(appl(appl(OR,T),F));
+
+output:-
+    val it = T : ?.X1 const
+
+3.
+input:-
+    val NOT = lembda(l,ITE(l,F,T))
+    fl(appl(NOT,T));
+
+output:-
+    val it = F : ?.X1 const
+
+4.
+input:-
+    fl(appl(lembda(l,lembda(m,P(S((l))))),Z));
+
+output:-
+    val it = lembda (m,P (S Z)) : ?.X1 const
+
+5.
+input:-
+    fl(appl(lembda(l,l),P(S(P(P(Z))))));
+
+output:-
+    val it = P (P Z) : ?.X1 const
+
+6.
+input:-
+    fl(appl(lembda(l,P(S(Z))),T));
+output:-
+    val it = Z : ?.X1 const
+
+7.
+input:-
+    fl(appl(lembda(l,l),P(S(P(Z)))));
+output:-
+    val it = P Z : ?.X1 const
+
+8.
+input:-
+    fl(P(S(S(Z))));
+output:-
+    val it = S Z : ?.X1 const
+
+9.
+input:-
+    fl(appl(lembda(l,GTZ(S(P(ITE(IZ(S(P(l))),P(S(S(P(S(l))))),P(P(l))))))),S(P(Z))));
+output:-
+    val it = T : ?.X1 const
+
+10.
+input:-
+    fl(S(P(S(P(S(S(P(Z))))))));
+output:-
+    val it = S Z : ?.X1 const
+
+11.
+input:-
+    fl(IZ(ITE(GTZ(S(P(S(Z)))),P(S(Z)),T)));
+output:-
+    val it = T : ?.X1 const
+
+12.
+input:-
+    fl(ITE(IZ(P(S(Z))),T,P(Z)));
+output:-
+    val it = T : ?.X1 const
+
+13.
+input:-
+    fl(ITE(T,(S(P(S(P(P(Z)))))),(S(S(Z)))));
+output:-
+    val it = P Z : ?.X1 const
+
+14.
+input:-
+    fl(S(S(S(ITE(T,(P(P(S(Z)))),(S(S(S(P(Z))))))))));
+output:-
+    val it = S (S Z) : ?.X1 const
+
+15.
+input:-
+    fl(ITE(appl(lembda(l,IZ(S(P(l)))),Z),appl(lembda(l,l),P(Z)),S(Z)))
+output:-
+    val it = P Z : ?.X1 const
+
+
+    
